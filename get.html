@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started</title>
+    <style>
+        body{font-family:arial; display: flex; flex-direction: column; align-items: center;}
+        h1{width: 350px; text-align: left;}
+        form{width: 350px;}
+        label{display: block; font-size: 18px; margin: 15px 0 5px 0;}
+        .field{
+            display: flex; align-items: center;
+            border: 2px solid #ccc; border-radius: 8px;
+            padding: 10px; gap: 8px;
+        }
+        .field input{border: none; outline: none; flex: 1; font-size: 16px;}
+        .field.error{border-color: red;}
+        .field.success{border-color: green;}
+        .icon{width: 22px; height: 22px; background: red; color: white; border-radius: 50%; text-align: center; line-height: 22px; font-weight: bold;}
+        .field.success.icon{background: green;}
+        small{color: red; display: none; margin-top: 4px;}
+        small.show{display: block;}
+        button{
+            width: 100%; background: #f07a6b; color: white;
+            border: none; padding: 14px; font-size: 18px;
+            border-radius: 8px; margin-top: 25px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Started</h1>
+    <form id="myForm">
+        <label>User Name</label>
+        <div class="field">
+            <span>&#128100</span>
+            <input type="text" id="username" placeholder="Joy Shaheb">
+            <span class="icon" id="usericon">!</span>
+        </div>
+        <small id="userError">Username cannot be blank</small><br><br>
+        
+        <label>Email</label>
+        <div class="field">
+            <span>📧</span>
+            <input type="email" id="email" placeholder="abc@gmail.com">
+            <span class="icon" id="usericon">!</span>
+        </div>
+        <small id="emailError">Email cannot be blank</small><br><br>
+
+        <label>Password</label>
+        <div class="field">
+            <span>🔒</span>
+            <input type="password" id="password" placeholder="password here">
+            <span class="icon" id="passwordicon">!</span>
+        </div>
+        <small id="passError">Password cannot be blank</small><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+    <script>
+       const form=document.getElementById(myForm);
+
+        form.addEventListener('submit', function(e) {e.preventDefault(); // stop page from reloading
+            
+        checkField('username', 'userError', 'usericon');
+        checkField('email', 'emailError', 'emailicon');
+        checkField('password', 'passError', 'passicon');
+        });
+
+        function checkField(inputid, errorid, iconid) {
+            const input=document.getElementById(inputid);
+            const fieldDiv=input.parentElement; // the.field box
+            const errorText=document.getElementById(errorid);
+            const icon=document.getElementById(iconid);
+
+        if (input.value.trim()===""){
+            // EMPTY -like in video at start
+            fieldDiv.classList.remove('success');
+            fieldDiv.classList.add('error');
+            errorText.classList.add('show');
+            icon.textContent='!';}
+            else{
+            // FIELD-like in video at the end
+            fieldDiv.classList.remove('error');
+            fieldDiv.classList.add('success');
+            errorText.classList.remove('show');
+            icon.textContent='✅';}
+        }
+    </script>
+    
+</body>
+</html>

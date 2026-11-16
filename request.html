@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Request</title>
+    <style>
+        .classone{
+            color: blue;
+            border-color: blue;
+        }
+        .classtwo{
+            border-color: blue;
+           border-width: 3px;
+        }
+    </style>
+</head>
+<body>
+   
+    <fieldset class="classtwo">
+        <h1>Reservation Request</h1>
+        
+        <form method="post">
+            <fieldset>
+              <legend class="classone">General Information</legend>  
+              Arrival date:   <input type="date" id="date" placeholder="12/39/2016"><br><br>
+            Nights:         <input type="text" id="nights"><br><br>
+            Adults:         <select name="adults" id="">
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                            </select> <br><br>
+            Children:       <select name="children" id="">
+                         <option value="0">0</option>                        
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                            </select>
+            </fieldset>
+            <fieldset>
+                <legend class="classone">Preferences</legend><br>
+                 
+            Room type:  <input type="radio" id="standard" value="standard">Standard 
+                        <input type="radio" value="business" id="business">Business 
+                        <input type="radio" value="suite">Suite <br>
+            Bed type:   <input type="radio" id="king" value="king">King 
+                        <input type="radio" value="double double">Double Double 
+                        <input type="radio" value="smoking">Smoking <br><br>
+            
+
+            </fieldset>
+            <fieldset>
+                <legend class="classone">Contact Information</legend><br>
+                 Name:   <input type="text" id="name"> <br> <br>
+            Email:  <input type="email" id="email" placeholder="graceyahoo.com">  <br><br>
+            Phone:  <input type="tel" id="tel" placeholder="123-456-789"> <br><br>
+            </fieldset>
+             <br>
+            <button type="submit">Submit Reservation</button>
+            <button type="reset">Clear</button>
+        </form>
+    </fieldset> 
+    
+    
+</body>
+</html>

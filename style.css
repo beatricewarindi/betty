@@ -1,0 +1,40 @@
+.Services{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.box{
+    background-color: blue;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    flex: 1;
+}
+.box2{
+    background-color: darkred;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    color: white;
+}
+.box3{
+    background-color: gold;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+}
+.button{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.button:hover{
+    background-color: palevioletred;
+}
